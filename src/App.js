@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import Formulario from './components/Formulario';
 import styled from '@emotion/styled';
-
 
 const Contenedor = styled.div`
     max-width: 600px;
@@ -15,6 +14,9 @@ const ContenedorFormulario = styled.form`
 `;
 
 function App() {
+
+  const [ resumen, guardarResumen ] = useState({}); 
+
   return (
     <Contenedor>
       <Header
@@ -22,7 +24,9 @@ function App() {
       />
 
       <ContenedorFormulario>
-        <Formulario></Formulario>
+        <Formulario
+          guardarResumen={guardarResumen}
+        />
       </ContenedorFormulario>
     </Contenedor>
   );
